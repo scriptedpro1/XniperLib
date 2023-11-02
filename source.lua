@@ -8,7 +8,6 @@ local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 local viewport = workspace.CurrentCamera.ViewportSize
 local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
-
 local minimized = false
 
 local Xniper = {
@@ -74,9 +73,9 @@ function Xniper:CreateWindow(options)
 		Xniper["c"] = Instance.new("Frame", Xniper["a"]);
 		Xniper["c"]["BorderSizePixel"] = 0;
 		Xniper["c"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-		Xniper["c"]["Size"] = UDim2.new(0, 414, 0, 8);
+		Xniper["c"]["Size"] = UDim2.new(0, 501,0, 8);
 		Xniper["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-		Xniper["c"]["Position"] = UDim2.new(0.16440701484680176, 0, 0.8367346525192261, 0);
+		Xniper["c"]["Position"] = UDim2.new(0, 0, 0.8367342352867126, 0);
 
 		Xniper["d"] = Instance.new("TextLabel", Xniper["a"]);
 		Xniper["d"]["BorderSizePixel"] = 0;
@@ -85,49 +84,48 @@ function Xniper:CreateWindow(options)
 		Xniper["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 		Xniper["d"]["TextSize"] = 20;
 		Xniper["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-		Xniper["d"]["Size"] = UDim2.new(0, 483, 0, 38);
+		Xniper["d"]["Size"] = UDim2.new(0, 483,0, 38);
 		Xniper["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		Xniper["d"]["Text"] = options["Title"];
 		Xniper["d"]["BackgroundTransparency"] = 1;
 		Xniper["d"]["Position"] = UDim2.new(0.021864380687475204, 0, 0, 0);
 
+		-- StarterGui.XniperLib.Main.TopBar.Exit
 		Xniper["e"] = Instance.new("ImageButton", Xniper["a"]);
 		Xniper["e"]["BorderSizePixel"] = 0;
 		Xniper["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-		Xniper["e"]["Image"] = [[rbxassetid://13150608888]];
-		Xniper["e"]["Size"] = UDim2.new(0, 24, 0, 22);
-		Xniper["e"]["HoverImage"] = [[rbxassetid://13150608888]];
+		Xniper["e"]["Image"] = [[rbxassetid://10884453403]];
+		Xniper["e"]["Size"] = UDim2.new(0, 17,0, 17);
+		Xniper["e"]["HoverImage"] = [[rbxassetid://10884453403]];
 		Xniper["e"]["Name"] = [[Exit]];
 		Xniper["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-		Xniper["e"]["Position"] = UDim2.new(0.9383366703987122, 0, 0.21533285081386566, 0);
+		Xniper["e"]["Position"] = UDim2.new(0.949999988079071, 0, 0.26899999380111694, 0);
 		Xniper["e"]["BackgroundTransparency"] = 1;
 		Xniper["e"].MouseButton1Down:Connect(function()
-			wait()
 			Xniper["1"]:Destroy()
 		end)
-		
-		Xniper["2c"] = Instance.new("ImageButton", Xniper["a"]);
-		Xniper["2c"]["BorderSizePixel"] = 0;
-		Xniper["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-		Xniper["2c"]["Image"] = [[rbxassetid://15234010735]];
-		Xniper["2c"]["Size"] = UDim2.new(0, 21, 0, 21);
-		Xniper["2c"]["HoverImage"] = [[rbxassetid://15234010735]];
-		Xniper["2c"]["Name"] = [[Minimize]];
-		Xniper["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-		Xniper["2c"]["Position"] = UDim2.new(0.8919880390167236, 0, 0.21533285081386566, 0);
-		Xniper["2c"]["BackgroundTransparency"] = 1;
-		Xniper["2c"].MouseButton1Down:Connect(function()
+
+		-- StarterGui.XniperLib.Main.TopBar.Minimize
+		Xniper["m"] = Instance.new("ImageButton", Xniper["a"]);
+		Xniper["m"]["BorderSizePixel"] = 0;
+		Xniper["m"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+		Xniper["m"]["Image"] = [[rbxassetid://15234010735]];
+		Xniper["m"]["Size"] = UDim2.new(0, 17, 0, 17);
+		Xniper["m"]["HoverImage"] = [[rbxassetid://15234010735]];
+		Xniper["m"]["Name"] = [[Minimize]];
+		Xniper["m"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+		Xniper["m"]["Position"] = UDim2.new(0.8999999761581421, 0, 0.26899999380111694, 0);
+		Xniper["m"]["BackgroundTransparency"] = 1;
+		Xniper["m"].MouseButton1Down:Connect(function()
 			if minimized then
 				minimized = false
-				Xniper["2"]:TweenSize(UDim2.new(0, 501, 0, 306), "InOut", "Linear", 0.1)
-				Xniper["2"].Transparency = 0
+				Xniper["2"]:TweenSize(UDim2.new(0, 501,0, 306), "InOut", "Linear", 0.1)
 				Xniper["4"].Visible = true
 				Xniper["f"].Visible = true
 				Xniper["c"].Visible = true
 			else
 				minimized = true
 				Xniper["2"]:TweenSize(UDim2.new(0, 492,0, 33), "InOut", "Linear", 0.1)
-				Xniper["2"].Transparency = 1
 				Xniper["4"].Visible = false
 				Xniper["f"].Visible = false
 				Xniper["c"].Visible = false
@@ -570,11 +568,11 @@ function Xniper:CreateWindow(options)
 			
 			-- Methods
 			do
-				function Toggle:Activate(b)
-					if b == nil then
+				function Toggle:Activate(bool)
+					if bool == nil then
 						Toggle.State = not Toggle.State
 					else
-						Toggle.State = b
+						Toggle.State = bool
 					end
 					
 					if Toggle.State then
@@ -649,7 +647,7 @@ function Xniper:CreateWindow(options)
 				options.min = 0
 				options.max = 100
 				options.default = 50
-				options.callback = function() end
+				options.callback = options.callback or function() end
 			end		
 			
 			--Render
@@ -746,25 +744,20 @@ function Xniper:CreateWindow(options)
 			
 			
 			-- Methods
-			
+			local value;
 			function Slider:SetValue(v)
 				if v == nil then
-					local Value;
 					local percentage = math.clamp((mouse.X - Tab["22"].AbsolutePosition.X) / (Tab["22"].AbsoluteSize.X), 0, 1)
 					local value = math.floor(((options.max - options.min) * percentage) + options.min)
 
 					Tab["26"].Text = tostring(value)
 					Tab["24"].Size = UDim2.fromScale(percentage, 1)
-
-					Value = math.floor((((tonumber(options.max) - tonumber(options.min)) / 300) * Tab["22"].AbsoluteSize.X) + tonumber(options.min)) or 0
-					pcall(function()
-						options.callback(Value, Slider:GetValue())
-					end)
+					
 				else
 					Tab["20"].Text = tostring(v)
 					Tab["24"].Size = UDim2.fromScale(((v - options.min) / (options.max - options.min)), 1)
 				end
-				--options.callback(Slider:GetValue())
+				options.callback(Slider:GetValue())
 			end
 			
 			function Slider:GetValue()
@@ -808,18 +801,16 @@ function Xniper:CreateWindow(options)
 						Slider.MouseDown = false
 
 						if Slider.Hover then
-							Xniper:tween(Tab["24"], {BackgroundColor3 = Color3.fromRGB(35, 35, 35)})
+							Xniper:tween(Tab["24"], {BackgroundColor3 = Color3.fromRGB(40, 40, 40)})
 						else
-							Xniper:tween(Tab["24"], {BackgroundColor3 = Color3.fromRGB(45, 45, 45)})
+							Xniper:tween(Tab["24"], {BackgroundColor3 = Color3.fromRGB(40, 40, 40)})
 						end
 
 						if Slider.Connection then Slider.Connection:Disconnect() end
 						Slider.Connection = nil
 					end
 				end)
-				
 			end
-		
 		end
 		
 		return Tab
